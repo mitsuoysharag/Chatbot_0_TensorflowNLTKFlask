@@ -1,0 +1,80 @@
+{
+  "intents": [
+    {
+      "tag": "saludo",
+      "patterns": ["Hola, como estas?", "Hay alguien ahi?", "Buen dia"],
+      "responses": [
+        "Hola, gracias por visitarnos",
+        "Gusto en verte",
+        "Hola, En que puedo ayudarte?"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "despedida",
+      "patterns": ["Adios nos vemos", "Te veo luego", "Hasta pronto"],
+      "responses": [
+        "Gracias por visitarnos",
+        "Ten un buen dia",
+        "Adios! Vuelva pronto"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "gracias",
+      "patterns": ["Gracias a ti", "Muchas gracias", "Eso fue de ayuda"],
+      "responses": ["Feliz de ayudarte", "Cuando quieras", "Un placer"],
+      "context_set": ""
+    },
+    {
+      "tag": "horas",
+      "patterns": [
+        "En que horario atienden?",
+        "Cuales son sus horas de atencion?",
+        "Cuando abren?"
+      ],
+      "responses": [
+        "Abrimos todos los dias entre 9am-9pm",
+        "Nuestras horas son de 9am-9pm todos los dias"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "renta",
+      "patterns": [
+        "Podemos rentar un carro?",
+        "Quiero rentar un carro",
+        "Como consigo un carro?"
+      ],
+      "responses": ["Quieres rentarlo hoy o despues de este mes?"],
+      "context_set": "renta_dia"
+    },
+    {
+      "tag": "hoy",
+      "patterns": ["hoy"],
+      "responses": ["Para rentas el dia de hoy, llamar al 123456"],
+      "context_filter": "renta_dia"
+    },
+    {
+      "tag": "presentacion",
+      "patterns": [
+        "Que eres?",
+        "Eres un robot o una persona?",
+        "Eres humano?",
+        "Eres hombre o mujer?"
+      ],
+      "responses": [
+        "Soy un robot creado para ayudarte",
+        "No soy humano, soy un robot"
+      ],
+      "context_set": ""
+    }
+  ],
+  "synonyms": {
+    "1": ["adios", "chau", "bye"],
+    "2": ["rentar", "alquilar", "arrendar"],
+    "3": ["carro", "vehiculo", "auto"],
+    "4": ["hoy", "ahora"],
+    "5": ["robot", "bot", "ia"]
+  }
+}

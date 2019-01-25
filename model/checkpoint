@@ -1,0 +1,2 @@
+model_checkpoint_path: "D:\\IYshara\\Python\\Flask\\Chatbot\\model\\model.tflearn"
+all_model_checkpoint_paths: "D:\\IYshara\\Python\\Flask\\Chatbot\\model\\model.tflearn"
