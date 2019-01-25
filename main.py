@@ -4,6 +4,10 @@ from ChatbotResponse import response
 
 app = Flask(__name__)
 
+@app.route("/")
+def index(sentence):
+    return "Hola Mundo"
+
 @app.route("/chatbot/<string:sentence>/")
 def chatbot(sentence):
     return jsonify(
