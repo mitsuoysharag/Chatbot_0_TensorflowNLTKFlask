@@ -5,7 +5,7 @@ from ChatbotResponse import response
 app = Flask(__name__)
 
 @app.route("/")
-def index(sentence):
+def index():
     return "Hola Mundo"
 
 @app.route("/chatbot/<string:sentence>/")

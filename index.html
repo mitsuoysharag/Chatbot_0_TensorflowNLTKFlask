@@ -47,7 +47,7 @@
                     this.conversation.push('Tu: ' + this.message)
                 },
                 getResponse() {
-                    fetch('http://localhost:5000/chatbot/' + this.message)
+                    fetch('http://127.0.0.1:5000/chatbot/' + this.message)
                         .then(response => {
                             return response.json();
                         })
