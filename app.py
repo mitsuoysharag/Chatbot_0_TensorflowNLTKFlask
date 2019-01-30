@@ -14,7 +14,6 @@ def index():
 def chatbot(sentence):
     return jsonify(
         message=response(sentence)
-        # message=sentence    
     )
 
 if __name__ == "__main__":

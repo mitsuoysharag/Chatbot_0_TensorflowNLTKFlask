@@ -9,7 +9,7 @@ import tflearn
 import numpy as np
 import random
 import nltk
-# import tensorflow as tf
+import tensorflow as tf
 # from nltk.stem.lancaster import LancasterStemmer
 from nltk.stem.snowball import SnowballStemmer
 # from nltk.corpus import stopwords
@@ -30,7 +30,7 @@ with open('intents.json') as json_data:
 
 
 #Build neural network
-# tf.reset_default_graph()
+tf.reset_default_graph()
 
 net = tflearn.input_data(shape=[None, len(train_x[0])])
 net = tflearn.fully_connected(net, 8)
