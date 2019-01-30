@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import jsonify
-from ChatbotResponse import response
+# from ChatbotResponse import response
 
 app = Flask(__name__)
 
@@ -11,7 +11,8 @@ def index():
 @app.route("/chatbot/<string:sentence>/")
 def chatbot(sentence):
     return jsonify(
-        message=response(sentence)
+        # message=response(sentence)
+        message=sentence    
     )
 
 if __name__ == "__main__":
