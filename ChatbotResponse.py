@@ -1,9 +1,6 @@
 
 # coding: utf-8
 
-# In[1]:
-
-
 #https://chatbotsmagazine.com/contextual-chat-bots-with-tensorflow-4391749d0077
 
 import pickle
@@ -12,15 +9,12 @@ import tflearn
 import numpy as np
 import random
 import nltk
-import tensorflow as tf
+# import tensorflow as tf
 # from nltk.stem.lancaster import LancasterStemmer
 from nltk.stem.snowball import SnowballStemmer
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 stemmer = SnowballStemmer('spanish')
-stop_words = stopwords.words('spanish')
-
-
-# In[30]:
+# stop_words = stopwords.words('spanish')
 
 
 data = pickle.load(open("training_data", "rb"))
@@ -34,24 +28,20 @@ train_y = data['train_y']
 with open('intents.json') as json_data:
     intents = json.load(json_data)
 
+
 #Build neural network
-tf.reset_default_graph()
+# tf.reset_default_graph()
 
 net = tflearn.input_data(shape=[None, len(train_x[0])])
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, len(train_y[0]), activation='softmax')
 net = tflearn.regression(net)
-
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 model.load('model/model.tflearn')
 
-
-# In[31]:
-
-
 # nltk.edit_distance(?)
-stop_words = stopwords.words('spanish')
+# stop_words = stopwords.words('spanish')
 
 def synonym(word1, word2):
     if word1 == word2:
@@ -76,8 +66,6 @@ def bow(sentence, words, show_details=False):
                 if show_details:
                     print('found in bag: %s' % w)
     return np.array(bag)
-
-# In[32]:
 
 
 ERROR_THRESHOLD = 0.3
@@ -105,9 +93,6 @@ def response(sentence, userID='123', show_details=False):
                     if show_details: print('tag:',i['tag'])
                     return random.choice(i['responses'])
     return 'Disculpa. No entendi tu mensaje'
-
-
-# In[33]:
 
 
 context = {}
